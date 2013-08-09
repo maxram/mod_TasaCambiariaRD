@@ -19,7 +19,7 @@ define('ALL_XLS',BCURLTC.'TASAS_CONVERTIBLES_OTRAS_MONEDAS.xls');
  */
 function getExcel($url){
 	$contents = file_get_contents($url);
-	$filename = 'temp'.time().'xls';
+	$filename = 'temp'.time().'.xls';
 	file_put_contents($filename, $contents);
 	return $filename;
 	
@@ -30,7 +30,7 @@ function getExcel($url){
  * @return (array) with the values for C and V
  */
 function getUSDRates(){
-	return _getCurrencyRates('USD');
+	return _getCurrencyRates();
 }
 
 /**
@@ -51,6 +51,7 @@ function _getCurrencyRates($type='USD'){
 	$objPHPExcel = PHPExcel_IOFactory::load($filename);
 	$objWorksheet = $objPHPExcel->getActiveSheet();
 	$highestRow = $objWorksheet->getHighestRow();
+	print_r($highestRow);
 	// D == compra E == Venta
 	$compra = $objWorksheet->getCell('D'.$highestRow)->getValue();
 	$venta = $objWorksheet->getCell('E'.$highestRow)->getValue();

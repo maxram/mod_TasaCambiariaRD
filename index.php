@@ -13,16 +13,11 @@
 			</header>
 			<div>
 			<?php 
-				// pr(getUSDRates());
-				// pr(getEURRates());
-				pr(getAllCurrencyRates());
+				print_r(getUSDRates());
+				// print_r(getEURRates());
+				// print_r(getAllCurrencyRates());
 			?>
 			</div>
-			<footer>
-				<p>
-					&copy; Copyright  by Ignacio Cano
-				</p>
-			</footer>
 		</div>
 	</body>
 </html>
