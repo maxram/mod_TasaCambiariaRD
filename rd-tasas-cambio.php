@@ -2,8 +2,11 @@
 require_once('libs/PHPExcel.php');
 //http://www.bancentral.gov.do/estadisticas.asp?a=Mercado_Cambiario
 define('BCURLTC','http://www.bancentral.gov.do/tasas_cambio/');
-// Se publica diariamente antes de las 6:30 p.m.
-define('USD_XLS',BCURLTC.'TASA_DOLAR_REFERENCIA_MC.XLS');
+/**
+ * Se publica diariamente antes de las 6:30 p.m.
+ */
+//define('USD_XLS',BCURLTC.'TASA_DOLAR_REFERENCIA_MC.XLS');
+define('USD_XLS',BCURLTC.'DOLAR_VENTANILLA_SONDEO.xls');
 /**
  * Se publica diariamente antes de las 12:30 p.m.
  * se supone que hay un excel al igual que el del dolar...
@@ -28,6 +31,10 @@ function getExcel($url){
 /**
  * Gets the USD Rates
  * @return (array) with the values for C and V
+ * @TODO There seems to be an issue, the highest 
+ * 		row given by PHPExcel is line 7020, this
+ * 		is no the highest row with data =/,
+ * 		currently using the Ventanilla XLS
  */
 function getUSDRates(){
 	return _getCurrencyRates();
