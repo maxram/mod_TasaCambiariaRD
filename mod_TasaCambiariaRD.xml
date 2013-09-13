@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1.0" client="site" method="upgrade">
+    <name>Tasa Cambiaria República Dominicana</name>
+    <author>Máximo Ramírez</author>
+    <creationDate>Septiembre 2013</creationDate>
+    <copyright>Copyright Info</copyright>
+    <license>GNU/GPL V2</license>
+    <authorEmail>aquiles011@gmail.com</authorEmail>
+    <version>1.0.0</version>
+    <description>Módulo para mostrar la tasa cambiaria</description>
+    <files>
+        <filename>mod_TasaCambiariaRD.xml</filename>
+        <filename module="mod_TasaCambiariaRD">mod_TasaCambiariaRD.php</filename>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>libs/PHPExcel.php</filename>
+        <folder>libs/PHPExcel</folder>
+    </files>
+    <config>
+    </config>
+</extension>
