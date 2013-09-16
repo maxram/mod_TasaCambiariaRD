@@ -11,7 +11,7 @@
     <files>
        <filename>mod_TasaCambiariaRD.xml</filename>
         <filename module="mod_TasaCambiariaRD">mod_TasaCambiariaRD.php</filename>
-		<filename module="mod_TasaCambiariaRD">helper.php</filename>
+	<filename module="mod_TasaCambiariaRD">helper.php</filename>
         <filename module="mod_TasaCambiariaRD">index.html</filename>     
         <folder>tmpl</folder>
         <folder>libs</folder>
