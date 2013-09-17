@@ -6,6 +6,7 @@ https://github.com/ignaciojcano/rd-tasas-cambio
 
 
 Obtiene las tasas de cambio a partir del excel que provee el banco central.
+Utilizando PHPExcel http://phpexcel.codeplex.com/
 
 Distribuido bajo Licencia GNU/GPL V3   http://www.gnu.org/licenses/gpl.html 
 mod_TrasaCambioRD es software libre. Puede ser modificado y/o distribuido
