@@ -34,7 +34,14 @@ class modTasaCambiariaHelper
      * @return (string) the name of the temp file. 
      */
     function getExcel($url){
-        $contents = file_get_contents($url);
+        $curl_handle=curl_init();
+	    curl_setopt($curl_handle, CURLOPT_URL, $url);
+    	curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
+    	curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
+    	curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Tasa Cambiaria RD');
+    	$contents = curl_exec($curl_handle);
+    	curl_close($curl_handle);
+    	
         $filename = 'temp'.time().'.xls';
         file_put_contents($filename, $contents);
         return $filename;   
