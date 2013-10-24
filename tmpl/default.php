@@ -1,14 +1,7 @@
-/**
- * @package    Máximo Ramírez
- * @subpackage Modules
- * @link 
- * @license        GNU/GPL V3   http://www.gnu.org/licenses/gpl.html 
- * mod_TrasaCambioRD es software libre. Puede ser modificado y/o distribuido
- * bajo los mismos terminos de misma licencia.
- */
 <?php 
-// No Acceso Directo
-defined( '_JEXEC' ) or die( 'Acceso Restringido' ); 
+
+// no direct access
+defined( '_JEXEC' ) or die( 'Restricted access' );
 $document = JFactory::getDocument();
 $document->addStyleSheet($this->baseurl.'/modules/mod_TasaCambiariaRD/tmpl/estilos.css');
 
