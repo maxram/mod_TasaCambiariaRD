@@ -7,14 +7,16 @@
     <license>GNU/GPL V2</license>
     <authorEmail>aquiles011@gmail.com</authorEmail>
     <version>1.0.0</version>
-    <description>Módulo para mostrar la tasa cambiaria</description>
+    <description>Module to display the exchange rate</description>
     <files>
-       <filename>mod_TasaCambiariaRD.xml</filename>
+        <filename>mod_TasaCambiariaRD.xml</filename>
         <filename module="mod_TasaCambiariaRD">mod_TasaCambiariaRD.php</filename>
-	<filename module="mod_TasaCambiariaRD">helper.php</filename>
-        <filename module="mod_TasaCambiariaRD">index.html</filename>     
-        <folder>tmpl</folder>
-        <folder>libs</folder>
+        <filename>index.html</filename>
+        <filename>helper.php</filename>
+        <filename>tmpl/default.php</filename>
+        <filename>tmpl/index.html</filename>
+        <filename>libs/PHPExcel.php</filename>
+        <folder>libs/PHPExcel</folder>
     </files>
     <config>
     </config>
