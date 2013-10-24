@@ -1,19 +1,23 @@
 <?php 
 /**
- * Modulo para mostrar la Tasa Cambiaria de la República Dominicana
+ * Module to display the Exchange Rate of the Dominican Republic
  * 
  * @package    Máximo Ramírez
  * @subpackage Modules
  * @link 
  * @license        GNU/GPL V3   http://www.gnu.org/licenses/gpl.html 
- * mod_TrasaCambioRD es software libre. Puede ser modificado y/o distribuido
- * bajo los mismos terminos de misma licencia.
- 
+ * mod_TrasaCambioRD is free software. Can be modified and/or distributed
+ * under the same terms of this license.
  */
 
 //no direct access
-defined( '_JEXEC' ) or die( 'Acceso Restringido' );
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
+/*
+include the helper.php file which contains the class to be used to collect the necessary data
+invoke the appropriate helper class method to retrieve the data
+include the template to display the output.
+*/
 require_once( dirname(__FILE__).'/helper.php' );
 $infoTasaCambiaria = modTasaCambiariaHelper::getRates($params);
 require( JModuleHelper::getLayoutPath( 'mod_TasaCambiariaRD' ) );
