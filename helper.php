@@ -1,26 +1,26 @@
 <?php
 /**
- * Helper class para el modulo Tasa Cambio RD
+ *Helper class for the module RD rate change
  * 
  * @package    Máximo Ramírez
  * @subpackage Modules
  * @link 
  * @license        GNU/GPL V3   http://www.gnu.org/licenses/gpl.html 
- * mod_TrasaCambioRD es software libre. Puede ser modificado y/o distribuido
- * bajo los mismos terminos de misma licencia.
+ * mod_TrasaCambioRD is free software. Can be modified and/or distributed
+ * under the same terms of this license.
  */
 
 require_once('libs/PHPExcel.php');
 //http://www.bancentral.gov.do/estadisticas.asp?a=Mercado_Cambiario
 define('BCURLTC','http://www.bancentral.gov.do/tasas_cambio/');
 /**
- * Se publica diariamente antes de las 6:30 p.m.
+ * It is published daily by 6:30 p.m.
  */
 //define('USD_XLS',BCURLTC.'TASA_DOLAR_REFERENCIA_MC.XLS');
 define('USD_XLS',BCURLTC.'DOLAR_VENTANILLA_SONDEO.xls');
 /**
- * Se publica diariamente antes de las 12:30 p.m.
- * se supone que hay un excel al igual que el del dolar...
+ * It is published daily before 12:30 p.m.
+ * Is supposed to be a excel like the the dollar ...
  */ 
 define('EUR_XLS',BCURLTC.'EURO_VENTANILLA_SONDEO.xls');
 // All currencies
@@ -34,23 +34,16 @@ class modTasaCambiariaHelper
      * @return (string) the name of the temp file. 
      */
     function getExcel($url){
-        $curl_handle=curl_init();
-	    curl_setopt($curl_handle, CURLOPT_URL, $url);
-    	curl_setopt($curl_handle, CURLOPT_CONNECTTIMEOUT, 2);
-    	curl_setopt($curl_handle, CURLOPT_RETURNTRANSFER, 1);
-    	curl_setopt($curl_handle, CURLOPT_USERAGENT, 'Tasa Cambiaria RD');
-    	$contents = curl_exec($curl_handle);
-    	curl_close($curl_handle);
-    	
+        $contents = file_get_contents($url);
         $filename = 'temp'.time().'.xls';
         file_put_contents($filename, $contents);
         return $filename;   
     }
     
     /**
-     * Obtiene los tipos de cambio, la lectura  proporcionado por el  Banco Central
-     * @param $type el tipo de moneda de conseguir, por defecto se utiliza Dólar y Euro
-     * @return (array) con los valores de Compra y Venta 
+     *Gets the exchange rates, the reading provided by the Central Bank of Dominican Republic
+     * @param $type the currency to get, by default it uses Dollar and Euro
+     * @return (array) with the values ​​of Purchase and Sale
      */
     function getCurrencyRates($type){
         for($i=0; $i < count($type); $i++){
@@ -75,9 +68,9 @@ class modTasaCambiariaHelper
     }
     
     /*
-      * Obtiene todas las monedas, sólo el valor de compra (C),
-      * Ya que eso es lo que el Banco Central dará en los XLS
-      * @return (array) con los valores de C para cada tipo del Banco Central dado.
+      * Gets all the coins, only the purchase price (C),
+      * Since that's what the Central Bank will in XLS
+      * @return (array) with the values ​​of C for each Central Bank rate given.
      */
     function getAllCurrencyRates(){
         $filename = getExcel(ALL_XLS);
