@@ -1,13 +1,9 @@
-/* 
-* Este es un script para instalar/desinstalar/actualizar el modulo 
-* Aun no es funcional. No se ha incluido en mod_TasaCambiariaRD.xml
-*/
 <?php 
 //no direct access
-define('_JEXEC' ) or die('Acceso Restringido');
+defined( '_JEXEC' ) or die( 'Restricted access' );
 
 /**
- * Script del Modulo TasaCambiaria 
+ * Script for Module TasaCambiaria 
  */
 class mod_TasaCambiariaRDInstallerScript
 {	
