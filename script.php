@@ -1,4 +1,14 @@
 <?php 
+/*------------------------------------------------------------------------
+
+# mod_TasaCambiariaRD
+# author    Máximo Ramírez
+# Copyright Copyright (C) 2013 omixam. All Rights Reserved.
+# @license - http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+# Websites: https://github.com/maxram
+# Technical Support:  Issues - https://github.com/maxram/mod_TasaCambiariaRD/issues
+
+-------------------------------------------------------------------------*/
 //no direct access
 defined( '_JEXEC' ) or die( 'Restricted access' );
 
