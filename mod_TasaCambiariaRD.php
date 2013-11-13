@@ -5,7 +5,7 @@
  * @package    Máximo Ramírez
  * @subpackage Modules
  * @link 
- * @license        GNU/GPL V3   http://www.gnu.org/licenses/gpl.html 
+ * @license  http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
  * mod_TrasaCambioRD is free software. Can be modified and/or distributed
  * under the same terms of this license.
  */
